@@ -1,0 +1,99 @@
+<div class="card">
+    <div class="card-header crd_hed">User Master</div>
+    <div class="card-body ">
+        <form [formGroup]="UserMasterForms">
+            <div class="form-group row">
+
+                <div class="col-md-2">Group Name</div>
+                <div class="col-md-2">
+                    <select name="ItemType" formControlName="GroupName" class="form-control drpDwn_style">
+                        <option value="" disabled>Select</option>
+                        <option [ngValue]=""></option>
+                    </select>
+                </div>
+                <div class="col-md-2">User Name</div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control txt-field" formControlName="UserName" placeholder="User Name">
+                </div>
+                <div class="col-md-2">Password</div>
+                <div class="col-md-2">
+                    <input type="password" class="form-control txt-field" formControlName="Password" placeholder="password">
+                </div>
+            </div>
+          
+            <div class="form-group row">
+                <div class="col-md-2"> Name</div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control txt-field" formControlName="Name" placeholder="Name">
+                </div>
+                <div class="col-md-2">Address</div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control txt-field" formControlName="Address1" placeholder="Address1">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control txt-field" formControlName="Address2"  placeholder="Address2">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control txt-field" formControlName="Address3"  placeholder="Address3">
+                </div>
+            </div>
+           
+            <div class="form-group row">
+                <div class="col-md-2"> Phone</div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control txt-field" formControlName="Phone"  placeholder="Phone No">
+                </div>
+                <div class="col-md-2"> Image</div>
+                <div class="col-md-2"><input type="file"> </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="offset-md-9 ">
+                    <input type="button" value="{{BtnName}}"  class="button botn_style" (click)="SaveUserMaster()">
+                    &nbsp;
+                    <input type="button" (click)="Clear()" class="botn_style" value="Clear">
+                </div>
+               
+            </div>
+
+        </form>
+
+
+        <div>
+            <table class="table  ">
+                <thead>
+                    <tr>
+                        <th style="width: 75px;">Sl.No</th>
+                        <th>Group Name</th>
+                        <th>User Name</th>
+                        <th> Name</th>
+                        <th>Address</th>
+              <th>Phone</th>
+               <th>Image</th>
+               <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ndx=index;">
+                        <td style="width: 75px;">{{ndx+1}}</td>
+                        <td></td>
+
+                        <td style="width:65px;">
+                            <a (Click)="Edit()">
+                                <img src="../../assets/edit-black.png" style="width:18px; height:18px;">
+                            </a>
+                        </td>
+
+                        <td style="width:65px;">
+                            <a (Click)="Delete()">
+                                <img src="../../assets/delete-512.png" style="width:18px; height:18px;">
+                            </a>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

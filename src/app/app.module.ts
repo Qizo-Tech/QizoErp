@@ -24,6 +24,8 @@ import { ItemmasterComponent } from './itemmaster/itemmaster.component';
 import { PricinglevelComponent } from './pricinglevel/pricinglevel.component';
 
 import { ItmmasterComponent } from './itmmaster/itmmaster.component';
+import { UserGroupComponent } from './user-group/user-group.component';
+import { UserMasterComponent } from './user-master/user-master.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ItmmasterComponent } from './itmmaster/itmmaster.component';
     ManufacturerComponent,
     ItemmasterComponent,
     PricinglevelComponent,
-    ItmmasterComponent
+    ItmmasterComponent,
+    UserGroupComponent,
+    UserMasterComponent
   ],
   imports: [
     BrowserModule,

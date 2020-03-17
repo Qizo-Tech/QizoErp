@@ -11,6 +11,8 @@ import { ManufacturerComponent } from './manufacturer/manufacturer.component';
 import { ItemmasterComponent } from './itemmaster/itemmaster.component';
 import { PricinglevelComponent } from './pricinglevel/pricinglevel.component';
 import { ItmmasterComponent } from './itmmaster/itmmaster.component';
+import { UserGroupComponent } from './user-group/user-group.component';
+import { UserMasterComponent } from './user-master/user-master.component';
 
 
 const routes: Routes = [
@@ -25,7 +27,9 @@ const routes: Routes = [
   { path: 'Manufacturer', component: ManufacturerComponent },
   { path: 'Itemmaster', component: ItemmasterComponent },
   {path: 'Pricinglevel', component: PricinglevelComponent},
-  {path: 'Itmmaster', component: ItmmasterComponent}
+  {path: 'Itmmaster', component: ItmmasterComponent},
+  {path: 'UserGroup', component: UserGroupComponent},
+  {path: 'UserMaster', component: UserMasterComponent}
 ];
 
 @NgModule({
@@ -44,5 +48,7 @@ export const routingComponent=[
   ManufacturerComponent,
   ItemmasterComponent,
   PricinglevelComponent,
-  ItmmasterComponent
+  ItmmasterComponent,
+  UserGroupComponent,
+  UserMasterComponent
 ]

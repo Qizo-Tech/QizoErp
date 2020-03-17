@@ -7,53 +7,80 @@
   
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="" routerLink="CompanyProfile">CompanyProfile</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link" href="" routerLink="ItemGroup"> Item Group</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="" routerLink="ItemType"> Item Type</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link" href="" routerLink="Taxtype">Tax Type</a>
-        </li>
-        
-        <li class="nav-item">
-          <a class="nav-link" href="" routerLink="Taxmaster">Tax Master</a>
-        </li>
-             
-        <li class="nav-item">
-          <a class="nav-link" href="" routerLink="Brand">Brand</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="" routerLink="Manufacturer">Manufacturer</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="" routerLink="Pricinglevel">Pricing Level</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="" routerLink="Itemmaster">Item Master</a>
-        </li>
-        
+     
+  
+     
 
         <li class="nav-item dropdown">
-            <div class="col">
-              <div ngbDropdown class="d-inline-block">
-                <button class="btn btn-outline-default" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button ngbDropdownItem>Action - 1</button>
-                  <button ngbDropdownItem>Another Action</button>
-                  <button ngbDropdownItem>Something else is here</button>
-                </div>
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button class="btn btn-outline-default" id="mnuMaster" ngbDropdownToggle>Masters</button>
+              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                <button ngbDropdownItem routerLink="ItemGroup">Item Group</button>
+                <button ngbDropdownItem routerLink="ItemType">Item Type </button>
+                <button ngbDropdownItem routerLink="CompanyProfile">Company Profile</button>
+                <button ngbDropdownItem routerLink="UserGroup">User Group</button>
+                <button ngbDropdownItem routerLink="UserMaster">User Master</button>
+
+                <button ngbDropdownItem routerLink="Itemmaster">Item Master</button>
+                <button ngbDropdownItem routerLink="Taxtype">Tax Type</button>
+                <button ngbDropdownItem routerLink="Pricinglevel">Pricing Level</button>
+                <button ngbDropdownItem routerLink="Manufacturer">Manufacturer</button>
+                <button ngbDropdownItem routerLink="Brand">Brand</button>
+                <button ngbDropdownItem routerLink="Taxmaster">Tax Master</button>                              
+                
+                
+                <button ngbDropdownItem routerLink="xxxxxxxx">xxxxxxxx</button>
+
+                
+                
               </div>
             </div>
-        </li>
+          </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-default" id="mnuTransaction" ngbDropdownToggle>Transaction</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">                       
+              <button ngbDropdownItem routerLink="xxxxxxxx">xxxxxxxx</button>
+
+              
+              
+            </div>
+          </div>
+        </div>
+    </li>
+
+    <li class="nav-item dropdown">
+      <div class="col">
+        <div ngbDropdown class="d-inline-block">
+          <button class="btn btn-outline-default" id="mnuReports" ngbDropdownToggle>Reports</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownBasic1">                       
+            <button ngbDropdownItem routerLink="xxxxxxxx">xxxxxxxx</button>
+
+            
+            
+          </div>
+        </div>
+      </div>
+ </li>
+
+      <li class="nav-item dropdown">
+        <div class="col">
+          <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-default" id="mnuSettings" ngbDropdownToggle>Settings</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">                       
+              <button ngbDropdownItem routerLink="xxxxxxxx">xxxxxxxx</button>
+
+              
+              
+            </div>
+          </div>
+        </div>
+    </li>
+
       </ul>
      
     </div>
