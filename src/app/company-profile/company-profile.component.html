@@ -1,0 +1,114 @@
+<div class="card crd_hed">
+    <div class="card-header crd_hed">Company Profile</div>
+    <div class="card-body ">
+        <form [formGroup]="CompProForms">
+            <div class="form-group row">
+                <div class="col-md-2">Name</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="Name" value="" class="form-control txt-field" placeholder="Name"  >
+                </div>
+                <div class="col-md-2">Short Name</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="ShortName" class="form-control txt-field" maxlength="25"
+                        placeholder="ShortName">
+                </div>
+                <div class="col-md-2">Mailing Name</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="MailingName" class="form-control txt-field"
+                        placeholder="Mailing-Name">
+                </div>
+            </div>
+          
+            <div class="form-group row">
+
+                <div class="col-md-2">State</div>
+                <div class="col-md-2">
+                    <select formControlName="ItemType" class="form-control drpDwn_style">
+                        <option  disabled>Select</option>
+                        <option [ngValue]="" *ngFor="let ste of StateList">{{ste.msName}}</option>
+                    </select>
+                </div>
+                <div class="col-md-2">Address</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="Address1" class="form-control txt-field" placeholder="Address1">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="Address2" class="form-control txt-field" placeholder="Address2">
+                </div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="Address3" class="form-control txt-field" placeholder="Address3">
+                </div>
+
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2">GST NO</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="GstNo" class="form-control txt-field" placeholder="Gst No">
+                </div>
+                <div class="col-md-2">PAN NO</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="PanNo" class="form-control txt-field" placeholder="Pan No">
+                </div>
+                <div class="col-md-2">Mobile NO</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="Mobile" class="form-control txt-field" placeholder="Mobile No">
+                </div>
+
+            </div>
+            
+            <div class="form-group row">
+                <div class="col-md-2">Contact NO</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="ContactNo" class="form-control txt-field"
+                        placeholder="Contact No">
+                </div>
+                <div class="col-md-2">Email</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="Email" class="form-control txt-field" placeholder="Email ">
+                </div>
+                <div class="col-md-2">WEB</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="WEB" class="form-control txt-field" placeholder="WEB ">
+                </div>
+
+            </div>
+          
+            <div class="form-group row">
+                <div class="col-md-2">Bank Name</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="BankName" class="form-control txt-field"
+                        placeholder="Bank Name">
+                </div>
+                <div class="col-md-2">ACC No</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="ACCNo" class="form-control txt-field" placeholder="ACC No ">
+                </div>
+                <div class="col-md-2">Branch</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="Branch" class="form-control txt-field" placeholder="Branch">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2">IFSC</div>
+                <div class="col-md-2">
+                    <input type="text" formControlName="IFSC" class="form-control txt-field" placeholder="IFSC">
+                </div>
+                <div class="col-md-2">Logo Path</div>
+                <div class="col-md-2">
+                    <img src="">
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <div class="offset-md-8 col-md-2">
+                    <input type="button" value="{{BtnName}}" (click)="SaveProfile()" class="button botn_style">
+                    &nbsp;
+                    <input type="button" value="Clear" (click)="Clear()" class="button botn_style">
+                </div>
+               
+            </div>
+
+        </form>
+    </div>
+</div>

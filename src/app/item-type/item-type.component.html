@@ -1,0 +1,68 @@
+
+<div class="card">
+    <div class="card-header crd_hed" >Item Type</div>
+    <div class="card-body ">
+        <form [formGroup]="ItemTypeForms"  >
+        <div class="form-group row">
+         
+         
+           <div class="col-md-2">Description</div>
+           <div class="col-md-4"> <input type="text" id="Description" formControlName="Description" 
+                                         class="form-control txt-field"  placeholder="Description" ></div>
+           <div class="col-md-6">
+            <input id="savItmTyp" value="{{BtnName}}" name="Save" type="button" class="button botn_style" (click)="SaveItemType()" >
+            
+            &nbsp;
+            <input type="button" (click)="Clear()" class=" botn_style"value="Clear" >
+           </div>
+        </div>
+        <div class="form-group row">
+         
+          </div>
+        
+      
+      </form>
+    
+   
+      <!-- table-striped -->
+    <div>
+        <table class="table  " >
+            <thead >
+              <tr>
+                <th style="width: 75px;">Sl.No</th>
+                <th>Item Type</th>
+              <th></th>
+              <th></th> 
+             <!-- <th>Edit</th>
+              <th>Delete</th> -->
+              </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let Items of ItemTypes; let  ndx = index" >
+                  <td style="width: 65px;">{{ndx+1}}</td>
+                  <td  >{{Items.description}}</td>
+                 
+                   <td style="width:65px;" >
+                     <a (click)="EdtItmTyp(Items)" > 
+                       <img src="../../assets/edit-black.png" style="width:18px; height:18px;">
+                    </a>
+                  </td>
+                
+                  <td style="width:65px;" >
+                    <a (click)="deltItmTyp(Items.id)" > 
+                      <img src="../../assets/delete-512.png" style="width:18px; height:18px;">
+                    </a>
+                  </td>
+
+                </tr>
+            </tbody>
+          </table>
+    </div>
+    
+    </div>
+    </div>
+    
+    
+    
+    
+    

@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#" routerLink="Home">Qizo ERP</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+            aria-expanded="false" aria-label="Toggle navigation" >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="" routerLink="CompanyProfile">CompanyProfile</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="" routerLink="ItemGroup"> Item Group</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="" routerLink="ItemType"> Item Type</a>
+        </li>
+        
+
+        <li class="nav-item dropdown">
+            <div class="col">
+              <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-default" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button ngbDropdownItem>Action - 1</button>
+                  <button ngbDropdownItem>Another Action</button>
+                  <button ngbDropdownItem>Something else is here</button>
+                </div>
+              </div>
+            </div>
+        </li>
+      </ul>
+     
+    </div>
+  </nav>
