@@ -1,0 +1,65 @@
+
+<div class="card">
+    <div class="card-header crd_hed" >Tax Type</div>
+    <div class="card-body">
+        <!-- (ngSubmit)="SaveTaxType()" -->
+        <form [formGroup]="TaxTypeForms"  >
+
+            <div class="form-group row">
+                <div class="col-md-2">Description</div>
+                <div class="col-md-4">
+                    <input type="text" id="Description" formControlName="TypDescription" class="form-control txt-field"
+                        placeholder="Description" >
+                    </div>
+                    <div class="col-md-6">
+                        <input class="button botn_style" value="{{BtnName}}" type="submit" (click)="SaveTaxType()" name="Save">
+                        
+                        &nbsp;
+                        <input type="button"  class=" botn_style" (click)="ResetForm()" value="Clear" >
+                    </div>
+            </div>
+
+            <!-- <div class="form-group row">
+                <input type="number" id="taxTypUserId" formControlName="taxTypUserId" class="form-control" hidden>
+                <input type="number" id="taxTypBranchId"  formControlName="taxTypBranchId" class="form-control" hidden >
+            </div> -->
+        </form>
+
+  <!-- table-striped -->
+  <div>
+    <table class="table" >
+        <thead >
+            
+            <tr>
+                <th style="width: 10%;">Sl.No</th>
+                <th>Description</th>
+            </tr>
+
+<!-- <th>Edit</th> -->
+
+        </thead>
+        <tbody >
+            <tr *ngFor="let tax of taxTypes; let  ndx = index" >
+                <td style="width: 10%;">{{ndx+1}}</td>
+                <td>{{tax.txTypDescription}}</td>
+              
+              <td style="width:65px;" >
+                <a (click)="EdtTaxTyp(tax)"> 
+                    <img src="../../assets/edit-black.png" style="width:18px; height:18px;">
+                </a>
+              </td>
+
+<!-- <th>Delete</th> -->
+
+              <td style="width:65px;" >
+                <a (click)="deltTaxTyp(tax.txTypId)"> 
+                  <img src="../../assets/delete-512.png" style="width:18px; height:18px;">
+                </a>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+</div>
+</div>
+</div>
+

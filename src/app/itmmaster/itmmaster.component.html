@@ -1,0 +1,294 @@
+<div class="card">
+    <div class="card-header crd_hed">Item Master</div>
+    <div class="card-body">
+        <form [formGroup]="ItmmasterForms">
+            
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Item Sub Group</div>
+                        <div class="col-sm-6">
+                            <!-- <div class="ng-autocomplete">  -->
+                                <ng-autocomplete [data]="SubGrp" [searchKeyword]="keyword1" 
+                                (selected)='selectEventSubGrp($event)'
+                                [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"  > 
+                                </ng-autocomplete>
+                                <ng-template #itemTemplate let-item >
+                                    <a [innerHTML]="item.isgDescription" ></a>
+                                </ng-template>
+                                <ng-template #notFoundTemplate let-notFound>
+                                    <div [innerHTML]="notFound"></div>
+                                </ng-template>
+                            <!-- </div> -->
+                        </div>
+                         
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Item Code</div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmCode" placeholder="Item Code">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Item Name</div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmName" placeholder="Item Name">
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Print Caption</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmPrintCaption" placeholder="Print Caption">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Stock Type</div>
+                        <div class="col-md-6">
+                            <ng-autocomplete [data]="Stock" [searchKeyword]="keyword2"
+                            (selected)='selectEventStck($event)'
+                            [itemTemplate]="StkitemTemplate" [notFoundTemplate]="notFoundTemplate">
+                            </ng-autocomplete>
+                            <ng-template #StkitemTemplate let-item >
+                                <a [innerHTML]="item.stockType"></a>
+                            </ng-template>
+                            <ng-template #notFoundTemplate let-notFound>
+                                <div [innerHTML]="notFound"></div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Product Type</div>
+                        <div class="col-md-6">
+                            <ng-autocomplete [data]="Product" [searchKeyword]="keyword3"
+                            (selected)='selectEventPrdt($event)'
+                            [itemTemplate]="PritemTemplate" [notFoundTemplate]="notFoundTemplate">
+                            </ng-autocomplete>
+                            <ng-template #PritemTemplate let-item >
+                                <a [innerHTML]="item.productType"></a>
+                            </ng-template>
+                            <ng-template #notFoundTemplate let-notFound>
+                                <div [innerHTML]="notFound"></div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Unit</div>
+                        <div class="col-md-6">
+                            <ng-autocomplete [data]="Unit" [searchKeyword]="keyword4"
+                            (selected)='selectEventUnit($event)'
+                            [itemTemplate]="UnitemTemplate" [notFoundTemplate]="notFoundTemplate">
+                            </ng-autocomplete>
+                            <ng-template #UnitemTemplate let-item >
+                                <a [innerHTML]="item.description"></a>
+                            </ng-template>
+                            <ng-template #notFoundTemplate let-notFound>
+                                <div [innerHTML]="notFound"></div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Manufacturer</div>
+                        <div class="col-md-6">
+                            <ng-autocomplete [data]="mfrdesc" [searchKeyword]="keyword5"
+                            (selected)='selectEventMfr($event)'
+                            [itemTemplate]="MfritemTemplate" [notFoundTemplate]="notFoundTemplate">
+                            </ng-autocomplete>
+                            <ng-template #MfritemTemplate let-item >
+                                <a [innerHTML]="item.mfrDescription"></a>
+                            </ng-template>
+                            <ng-template #notFoundTemplate let-notFound>
+                                <div [innerHTML]="notFound"></div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Brand</div>
+                        <div class="col-sm-6">
+                            <ng-autocomplete [data]="brandname" [searchKeyword]="keyword6"
+                            (selected)='selectEventBrnd($event)'
+                            [itemTemplate]="BrditemTemplate" [notFoundTemplate]="notFoundTemplate">
+                            </ng-autocomplete>
+                            <ng-template #BrditemTemplate let-item >
+                                <a [innerHTML]="item.brndDescription"></a>
+                            </ng-template>
+                            <ng-template #notFoundTemplate let-notFound>
+                                <div [innerHTML]="notFound"></div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Godown</div>
+                        <div class="col-sm-6">
+                            <ng-autocomplete [data]="Godown" [searchKeyword]="keyword7"
+                            (selected)='selectEventGdwn($event)'
+                            [itemTemplate]="GnitemTemplate" [notFoundTemplate]="notFoundTemplate">
+                            </ng-autocomplete>
+                            <ng-template #GnitemTemplate let-item >
+                                <a [innerHTML]="item.gdnInch_Name"></a>
+                            </ng-template>
+                            <ng-template #notFoundTemplate let-notFound>
+                                <div [innerHTML]="notFound"></div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">ROL</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmRol" placeholder="ROL">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">ROQ</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmRoq" placeholder="ROQ">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Minimum Qty</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmMinQty" placeholder="Minimum Qty">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Maximum Qty</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmMaxQty" placeholder="Maximum Qty">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Warranty</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmWarrantyInMonths" placeholder="Warranty In Months">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Barcode</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmBarCode" placeholder="Barcode">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Description</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmDescription" placeholder="Description">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Opening Stock</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmOpeningStock" placeholder="Opening Stock">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Specifications</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmSpecification" placeholder="Specifications">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">HSN</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmHsn" placeholder="HSN">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Model</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmModel" placeholder="Model Number">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Tax Applicable </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="ex" id="ex1" >
+                            <label class="form-check-label" for="ex1">Yes</label></div>  &nbsp; &nbsp;
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="ex" id="ex2">
+                            <label class="form-check-label" for="ex2">No</label></div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-4">Monthly Target</div>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control txt-field" formControlName="itmMonthlyTarget" placeholder="Monthly Target">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <input class="button botn_style" type="button" (click)="SaveMaster()" value="Save"> &nbsp;
+                    <!-- <input class="button botn_style" type="button" (click)="clear()" value="clear">&nbsp; -->
+                    <input type="button" class="button botn_style" value="Back" routerLink="../Itemmaster" >
+                </div>
+            </div>
+        </form>
+
+    
+    </div>
+</div>
+

@@ -1,0 +1,49 @@
+
+<div class="card">
+    <div class="card-header crd_hed">Manufacturer</div>
+    <div class="card-body">
+        <form [formGroup]="ManufacturerForms">
+
+            <div class="form-group row">
+                <div class="col-md-2">Manufacturer Name</div>
+                <div class="col-md-4">
+                    <input type="text" id="Manufacturer" formControlName="mfrDescription" class="form-control txt-field"
+                    placeholder="Manufacture Name">
+                </div>
+                <div class="col-md-6">
+                    <input class="button botn_style" value="{{btnName}}" (click)="SaveMfr()" type="submit" name="Save">
+                    &nbsp;
+                    <input class="button botn_style" type="button" (click)="Reset()" value="Clear">
+                </div>
+            </div>
+        </form>
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width:10%;">Sl.No</th>
+                        <th>Manufacturer Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let mfr of mfrdesc; let ndx = index">
+                        <td style="width:10%;">{{ndx+1}}</td>
+                        <td>{{ mfr.mfrDescription }}</td>
+
+                        <td style="width:65px;" >
+                            <a (click)="EdtMfr(mfr)">
+                                <img src="../../assets/edit-black.png" style="width:18px; height:18px;">
+                            </a>
+                        </td>
+
+                        <td style="width:65px;">
+                            <a (click)="DetMfr(mfr.mfrId)"><img src="../../assets/delete-512.png" style="width:18px; height:18px;"></a>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

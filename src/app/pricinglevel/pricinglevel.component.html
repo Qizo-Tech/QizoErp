@@ -1,0 +1,89 @@
+
+<div class="card">
+    <div class="card-header crd_hed">Pricing Level</div>
+    <div class="card-body">
+        <form [formGroup]="PricingLevelForms">
+
+            <div class="form-group row">
+                <div class="col-md-2">Description</div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" formControlName="plDescription" placeholder="Description">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-2">Discount Percentage</div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" formControlName="plDiscountPercentage" placeholder="Discount Percentage">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-2">Discount Amount</div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" formControlName="disamount" placeholder="Discount Amount">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-2">Narration</div>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" formControlName="plNarration" placeholder="Narration">
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-md-6">
+                    <input class="button botn_style" type="submit" (click)="SavePrice()" value="{{btnName}}">
+                    &nbsp;
+                    <input type="button"  class="botn_style" (click)="Reset()"  value="Clear">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-2 offset-md-8">
+                    <!-- <input type="text" placeholder="Search"> -->
+                    <!-- <div class="ng-autocomplete"> -->
+                        <ng-autocomplete [data]="priceLevel"[searchKeyword]="keyword"
+                        (selected)='selectEvent($event)'
+                        (inputChanged)='onChangeSearch($event)'
+                        (inputFocused)='onFocused($event)' 
+                        [itemTemplate]="itemTemplate" [notFoundTemplate]="notFoundTemplate"> 
+                        </ng-autocomplete>
+                        <ng-template #itemTemplate let-item>
+                            <a [innerHTML]="item.plDescription"></a>
+                        </ng-template>
+                        <ng-template #notFoundTemplate let-notFound>
+                            <div [innerHTML]="notFound"></div>
+                        </ng-template>
+                    <!-- </div> -->
+
+                </div>
+            </div>
+        </form>
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">Sl.No</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let price of priceLevel; let ndx=index">
+                        <td style="width: 10%;">{{ndx+1}}</td>
+                        <td>{{price.plDescription}}</td>
+                        
+                        <td style="width: 10%;">
+                            <a (click)="EdtPrice(price)"><img src="../../assets/edit-black.png" style="width:18px; height:18px;"></a>
+                        </td>
+                        <td style="width:10%;">
+                            <a (click)="DetPrice(price.id)"><img src="../../assets/delete-512.png" style="width:18px; height:18px;"></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+
+<div class="card">
+    <div class="card-header crd_hed">Tax Master</div>
+    <div class="card-body">
+        <form [formGroup]="TaxMasterForms">
+
+            <div class="form-group row">
+                <div class="col-md-2">Tax Type</div>
+                <div class="col-md-4">
+                    <select id="" name="txTaxTypeId" class="form-control drpDwn_style">
+                        <option value=" ">Select Type</option>
+                        <option  *ngFor="let typ of taxTypes">
+                            {{typ.txTypDescription}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-2">Description</div>
+                <div class="col-md-4">
+                    <input type="text" id="Description" formControlName="txDescription" class="form-control txt-field">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-2">Tax Percentage</div>
+                <div class="col-md-4">
+                    <input type="text" id="Percentage" formControlNmae="txPercentage" class="form-control txt-field">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-2">Account Head</div>
+                <div class="col-md-4">
+                    <input type="text" id="AccountHead" formControlName="txAccountHeadId" class="form-control txt-field">
+                </div>
+                <!-- <div class="col-md-6">
+                    <button class="button botn_style" name="search"><span id="search">Search</span>
+                    </button>
+                </div> -->
+            </div> 
+
+            <div class="form-group row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="col-md-8">
+                        <input class="button botn_style" name="Save"  type="submit" (click)="SaveTaxMas()" value="{{btnName}}">
+                        &nbsp;
+                        <input type="button" class="button botn_style" (click)="ResetForm()" value="Clear">
+                    </div>
+                </div>
+            </div>
+    
+            <!-- <div class="form-group row">
+                <input type="number" id="taxTypUserId" formControlName="txUserId" class="form-control" hidden>
+                <input type="number" id="taxTypBranchId"  formControlName="txBranchId" class="form-control" hidden >
+            </div> -->
+        </form>
+
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 10%;">Sl.No</th>
+                        <th>Description</th>
+                        <th style="width: 10%;"></th>   <!--Edit-->
+                        <th style="width: 10%;"></th>    <!--Delete-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let tax of taxMaster; let  ndx = index">
+                        <td style="width: 10%;">{{ndx+1}}</td>
+                        <td>{{tax.txDescription}}</td>
+
+                        <td style="width:10%;">
+                            <a (click)="EdtTaxMas(tax)"><img src="../../assets/edit-black.png" style="width:18px; height:18px;"></a>
+                        </td>
+
+                        <td style="width:10%;">
+                        <a (click)="detTaxMas(tax.txId)"><img src="../../assets/delete-512.png" style="width:18px; height:18px;"></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
